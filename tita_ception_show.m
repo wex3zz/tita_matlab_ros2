@@ -90,16 +90,6 @@ function motorStatusCallback(msg)
 
 end
 
-function batteryStatusCallback(msg)
-    global battery_text isFigureOpen;
-    if ~isFigureOpen
-        return; 
-    end
-    battery_data = sprintf('Battery Voltage: %f V\nBattery Percentage: %f%%\n', ...
-                           msg.voltage, msg.percentage);
-    set(battery_text, 'String', battery_data); 
-end
-
 function batteryLeftStatusCallback(msg)
     global battery_left_text isFigureOpen;
     if ~isFigureOpen
